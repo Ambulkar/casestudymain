@@ -1,0 +1,19 @@
+{
+    "coursedetail": [
+        {
+            "id": 1,
+            "courseName": "Java",
+            "coursePrice": 8000
+        },
+        {
+            "id": 1,
+            "courseName": "react",
+            "coursePrice": 45000
+        },
+        {
+            "id": 1,
+            "courseName": "Angular",
+            "coursePrice": 45000
+        }
+    ]
+}

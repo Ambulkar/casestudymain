@@ -1,0 +1,61 @@
+<div class="container">
+  <div>
+    <ul>
+      <li *ngFor="let course of courseArray">
+        <h4 class="text-primary">{{ course.courseName }}</h4>
+      </li>
+    </ul>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="form-group" class="col-lg-5">
+      <h3 class="text-primary">Add Course</h3>
+      <form #courseAddForm="ngForm" (ngSubmit)="addCourse(courseAddForm)">
+        <div>
+          <label>Course Name</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="text" #courseName="ngModel" ngModel
+            name="courseName" class="form-control" required />
+          <br />
+          <div
+            *ngIf="courseName.touched && courseName.invalid"
+            class="error alert alert-warning">
+            Course Name is Required !!
+          </div>
+        </div>
+        <br />
+        <div>
+          <label>Course Duration</label>&nbsp;
+          <input type="number" #duration="ngModel" ngModel
+            name="duration" class="form-control" required />
+          <br />
+          <div
+            *ngIf="duration.touched && duration.invalid"
+            class="error alert alert-warning" >
+            Course Duration is Required !!
+          </div>
+        </div>
+        <button type="submit" class="btn btn-warning">Add</button>
+      </form>
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="form-group" class="col-lg-5">
+      <h3 class="text-primary">Get Course Duration</h3>
+      <form #getForm="ngForm" (ngSubmit)="getDuration(getForm)">
+        <label>Course Name</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text"  #name="ngModel" ngModel
+          name="name" class="form-control" required />
+        <br />
+        <div *ngIf="name.touched && name.invalid" class="error alert alert-warning">
+          Course Name is Required !!
+        </div>
+
+        <button type="submit" class="btn btn-primary">Get Duration</button>
+      </form>
+      <br />
+      <h3 class="text-primary">{{ courseDuration }}</h3>
+    </div>
+  </div>
+  <a class="btn btn-success btn-lg" role="button" routerLink="">Go Back</a>
+</div>
